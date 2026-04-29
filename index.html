@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Video Page</title>
+  <title>Locked Video</title>
   <style>
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
       height: 100%;
@@ -24,10 +24,18 @@
 <body>
 
 <iframe 
-  src="https://www.youtube.com/embed/ar01WqD1gNY?si=D470y7UK4lfcmBQLautoplay=1&loop=1&playlist=VIDEO_ID&controls=0&mute=1"
+  src="https://www.youtube.com/embed/ar01WqD1gNY?autoplay=1&loop=1&playlist=ar01WqD1gNY&controls=0&mute=1"
   frameborder="0"
   allow="autoplay">
 </iframe>
+
+<script>
+  // Try to force fullscreen (user may still need to tap once)
+  document.documentElement.requestFullscreen?.();
+
+  // Block most keyboard input (adds to the “locked” feel)
+  document.addEventListener("keydown", e => e.preventDefault());
+</script>
 
 </body>
 </html>
